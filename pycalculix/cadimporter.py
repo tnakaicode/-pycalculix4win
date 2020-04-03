@@ -181,7 +181,7 @@ class CadImporter(object):
         # gmsh freecad_part.iges -o out_iges.geo -0
         fname_list = self.__fname.split('.')
         geo_file = fname_list[0]+'.geo'
-        runstr = "%s %s -o %s -0" % (environment.GMSH, self.__fname, geo_file)
+        runstr = "%s %s -o %s -0" % (os.getenv("GMSH"), self.__fname, geo_file)
         print(runstr)
         subprocess.call(runstr, shell=True)
         print('Wrote file: %s' % geo_file)

@@ -1802,7 +1802,7 @@ class FeaModel(object):
         print('File: %s was written' % fname)
 
         # run file in bg mode, -2 is 2d mesh, makes required inp file
-        runstr = "%s %s -2 -o %s" % (environment.GMSH, fname, fout)
+        runstr = "%s %s -2 -o %s" % (os.getenv("GMSH"), fname, fout)
         print(runstr)
         subprocess.check_call(runstr, timeout=timeout, shell=True)
         print('File: %s was written' % fout)
@@ -1810,7 +1810,7 @@ class FeaModel(object):
 
         # write gmsh msh file, for manual checking only
         # not required by pycalculix
-        runstr = "%s %s -2 -o %s" % (environment.GMSH, fname,
+        runstr = "%s %s -2 -o %s" % (os.getenv("GMSH"), fname,
                                      self.fname+'.msh')
         subprocess.check_call(runstr, timeout=timeout, shell=True)
         print('File: %s.msh was written' % self.fname)

@@ -20,3 +20,11 @@ junit/
 *.sta
 *.png
 *.ipynb
+
+# Build
+build
+dist
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
