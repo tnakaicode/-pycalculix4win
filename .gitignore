@@ -21,6 +21,9 @@ junit/
 *.png
 *.ipynb
 
+# VScode
+.vscode
+
 # Build
 build
 dist
